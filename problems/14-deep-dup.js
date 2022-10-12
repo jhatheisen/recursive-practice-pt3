@@ -36,17 +36,19 @@ console.log(x[0] === y[0]) // true
 
 function deepDup(arr) {
   // Your code here
-  const flat = [];
+  const duped = [];
   debugger;
     arr.forEach(ele => {
       if (Array.isArray(ele)) {
-        flat.push(deepDup(ele));
+        // just push array into duped array
+        duped.push(deepDup(ele));
       } else {
-        flat.push(ele);
+        // just push val into duped array
+        duped.push(ele);
       }
     });
 
-    return flat;
+    return duped;
 }
 
 
