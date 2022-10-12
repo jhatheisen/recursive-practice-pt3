@@ -65,6 +65,12 @@ The call above should return the tree below:
 
 const makeTree = (categories, parent) => {
   // Your code here
+  let object = {};
+  if (){
+    return object
+  }
+
+    return makeTree()
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
