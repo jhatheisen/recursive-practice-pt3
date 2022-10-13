@@ -62,15 +62,27 @@ The call above should return the tree below:
 }
 
 ***********************************************************************/
-
+// Parent tells us what level we should be on
+// 2. first case parent is null
 const makeTree = (categories, parent) => {
-  // Your code here
-  let object = {};
-  if (){
-    return object
-  }
+  // building up res obj
+  // 1. create res, an obj to add onto
+  let res = {};
 
-    return makeTree()
+  // 3. go through each catagory obj in arr catagories
+  categories.forEach(category => {
+    // base case
+    // 4. if catagory has the parent val same as parent
+    if (category.parent === parent) {
+      // 5. create key of id , call tree with parent of current id
+      res[category.id] = makeTree(categories, category.id);
+    }
+    // 6. will repeat and make objs in objs by calling make tree,
+    // until can't parent same as id
+  });
+
+  // eventually return res
+  return res;
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
